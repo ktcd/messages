@@ -21,7 +21,7 @@ class InitialMessagesTables extends Migration
             $table->string('receiver_type')->index()->nullable();
             $table->string('subject')->nullable();
             $table->longText('text')->nullable();
-            $table->boolean('was_read')->default(0);
+            $table->timestamp('read_at')->nullable();
             $table->timestamps();
         });
     }
