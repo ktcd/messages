@@ -24,16 +24,6 @@ class InitialMessagesTables extends Migration
             $table->boolean('was_read')->default(0);
             $table->timestamps();
         });
-
-        Schema::create(config('ktcd_messages.notification_table'), function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('receiver_id')->index()->nullable();
-            $table->string('receiver_type')->index()->nullable();
-            $table->string('subject')->nullable();
-            $table->longText('text')->nullable();
-            $table->boolean('was_read')->default(0);
-            $table->timestamps();
-        });
     }
 
     /**
@@ -44,6 +34,5 @@ class InitialMessagesTables extends Migration
     public function down()
     {
         Schema::dropTable(config('ktcd_messages.message_table'));
-        Schema::dropTable(config('ktcd_messages.notification_table'));
     }
 }
