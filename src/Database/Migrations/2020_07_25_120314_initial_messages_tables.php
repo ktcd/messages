@@ -19,7 +19,7 @@ class InitialMessagesTables extends Migration
             $table->string('sender_type')->index()->nullable();
             $table->unsignedBigInteger('receiver_id')->index()->nullable();
             $table->string('receiver_type')->index()->nullable();
-            $table->string('title')->nullable();
+            $table->string('subject')->nullable();
             $table->longText('text')->nullable();
             $table->boolean('was_read')->default(0);
             $table->timestamps();
