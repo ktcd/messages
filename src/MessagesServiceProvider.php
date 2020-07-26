@@ -13,9 +13,9 @@ class MessagesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/config/ktcd_messages.php', 'ktcd_messages');
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-        $this->loadTranslationsFrom(__DIR__ . '/resources/lang', 'messages');
+        $this->mergeConfigFrom(__DIR__ . '/Config/ktcd_messages.php', 'ktcd_messages');
+        $this->loadMigrationsFrom(__DIR__ . '/Database/Migrations');
+        $this->loadTranslationsFrom(__DIR__ . '/Resources/lang', 'messages');
     }
 
     /**
